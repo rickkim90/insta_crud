@@ -1,0 +1,16 @@
+<h1>Welcome to fake instagram</h1>
+<form action="/post/create">
+    제 목 : <input type="text" name="title"><br>
+    내 용 : <input type="text" name="content"><br>
+    <input type="submit">
+</form>
+
+<% @posts.each do |post| %> 
+    <%= post.id %>번째 글<br>
+    제 목 : <%= post.title %><br>
+    내 용 : <%= post.content %> 
+    <a href="/post/show/<%= post.id %>">[더보기]</a>
+    <a href="/post/update/<%= post.id %>">[수정]</a>
+    <a href="/post/destroy/<%= post.id %>">[x]</a><br>
+    <hr>
+<% end %>
